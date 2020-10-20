@@ -1,0 +1,124 @@
+.circle {
+    width: 52px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #808080;
+}
+
+.rounded-rectangle {
+    width: 52px;
+    height: 40px;
+    border-radius: 15px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #808080;
+}
+
+.i {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+    background-image: url(../img/icon-list.png);
+    background-size: 400px;
+    overflow: hidden;
+}
+
+.i-person {
+    background-position-x: 369px;
+    background-position-y: -32px;
+    ;
+}
+
+.i-phone {
+    background-position-x: 274px;
+    background-position-y: -32px;
+    ;
+}
+
+.i-message {
+    background-position-x: 179px;
+    background-position-y: -32px;
+    ;
+}
+
+.i-clock {
+    background-position-x: 84px;
+    background-position-y: -32px;
+    ;
+}
+
+.i-music {
+    background-position-x: 369px;
+    background-position-y: -126px;
+    ;
+}
+
+.i-photo {
+    background-position-x: 274px;
+    background-position-y: -126px;
+    ;
+}
+
+.i-photocamera {
+    background-position-x: 179px;
+    background-position-y: -126px;
+    ;
+}
+
+.i-videocamera {
+    background-position-x: 84px;
+    background-position-y: -126px;
+    ;
+}
+
+.i-webcam {
+    background-position-x: 369px;
+    background-position-y: -224px;
+    ;
+}
+
+.i-microphone {
+    background-position-x: 274px;
+    background-position-y: -224px;
+    ;
+}
+
+.i-trashcan {
+    background-position-x: 179px;
+    background-position-y: -224px;
+    ;
+}
+
+.i-find {
+    background-position-x: 84px;
+    background-position-y: -224px;
+    ;
+}
+
+.i-location {
+    background-position-x: 369px;
+    background-position-y: -318px;
+    ;
+}
+
+.i-setting {
+    background-position-x: 274px;
+    background-position-y: -318px;
+    ;
+}
+
+.i-speaker {
+    background-position-x: 179px;
+    background-position-y: -318px;
+    ;
+}
+
+.i-note {
+    background-position-x: 84px;
+    background-position-y: -318px;
+    ;
+}
