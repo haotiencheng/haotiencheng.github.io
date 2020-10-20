@@ -21,7 +21,7 @@
 .i {
     height: 50px;
     width: 50px;
-    margin-left: 10px;
+    margin-left: 0px;
     background-image: url(../img/icon-list.png);
     background-size: 400px;
     overflow: hidden;
