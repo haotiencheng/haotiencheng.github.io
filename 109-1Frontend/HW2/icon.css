@@ -1,0 +1,322 @@
+.wallpaper {
+    height: 660px;
+    width: 324px;
+    border-left: 15px;
+    border-right: 15px;
+    border-top: 40px;
+    border-bottom: 50px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 6%;
+    position: relative;
+}
+
+.i {
+    background-image: url(template.jpg);
+    background-size: 324px, 660px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.font {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 5px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+}
+
+.long {
+    height: 75px;
+    width: 290px;
+    z-index: 1;
+    border-color: transparent;
+}
+
+.icon {
+    height: 33px;
+    width: 35px;
+    margin-left: 0px;
+    border-radius: 15px;
+    /* display: inline-block;
+    border-style: solid;
+    border-width: 3px;
+    border-color: transparent; */
+    z-index: 1;
+}
+
+.invoice {
+    top: 55px;
+    left: 40px;
+    background-position-x: center;
+    background-position-y: 1950px;
+}
+
+.weather {
+    top: 140px;
+    left: 40px;
+    background-position-x: center;
+    background-position-y: 534px;
+}
+
+.bear {
+    top: 225px;
+    left: 50px;
+    background-position-x: 293px;
+    background-position-y: 448px;
+}
+
+.fbear {
+    top: 265px;
+    left: 44px;
+}
+
+.Forest {
+    top: 225px;
+    left: 125px;
+    background-position-x: 219px;
+    background-position-y: 448px;
+}
+
+.fforest {
+    top: 265px;
+    left: 126px;
+}
+
+.dict {
+    top: 225px;
+    left: 200px;
+    background-position-x: 142px;
+    background-position-y: 448px;
+}
+
+.fdict {
+    top: 265px;
+    left: 205px;
+}
+
+.note {
+    top: 225px;
+    left: 275px;
+    background-position-x: 69px;
+    background-position-y: 448px;
+}
+
+.fnote {
+    top: 265px;
+    left: 267px;
+}
+
+.fnote2 {
+    top: 280px;
+    left: 276px;
+}
+
+.bus {
+    top: 330px;
+    left: 50px;
+    background-position-x: 293px;
+    background-position-y: 365px;
+}
+
+.fbus {
+    top: 370px;
+    left: 38px;
+}
+
+.calendar {
+    top: 330px;
+    left: 125px;
+    background-position-x: 219px;
+    background-position-y: 365px;
+}
+
+.fcalendar {
+    top: 370px;
+    left: 131px;
+}
+
+.game {
+    top: 330px;
+    left: 200px;
+    background-position-x: 141px;
+    background-position-y: 365px;
+}
+
+.fgame {
+    top: 370px;
+    left: 193px;
+}
+
+.map {
+    top: 330px;
+    left: 275px;
+    background-position-x: 66px;
+    background-position-y: 365px;
+}
+
+.fmap {
+    top: 370px;
+    left: 280px;
+}
+
+.spotify {
+    top: 435px;
+    left: 50px;
+    background-position-x: 293px;
+    background-position-y: 284px;
+}
+
+.fspotify {
+    top: 475px;
+    left: 47px;
+}
+
+.ptt {
+    top: 435px;
+    left: 125px;
+    background-position-x: 217px;
+    background-position-y: 284px;
+}
+
+.fptt {
+    top: 475px;
+    left: 124px;
+}
+
+.instagram {
+    top: 435px;
+    left: 200px;
+    background-position-x: 141px;
+    background-position-y: 284px;
+}
+
+.finstagram {
+    top: 475px;
+    left: 189px;
+}
+
+.photo {
+    top: 435px;
+    left: 275px;
+    background-position-x: 66px;
+    background-position-y: 284px;
+}
+
+.fphoto {
+    top: 475px;
+    left: 264px;
+}
+
+.line {
+    top: 540px;
+    left: 50px;
+    background-position-x: 293px;
+    background-position-y: 203px;
+}
+
+.fline {
+    top: 580px;
+    left: 54px;
+}
+
+.mail {
+    top: 540px;
+    left: 125px;
+    background-position-x: 217px;
+    background-position-y: 203px;
+}
+
+.fmail {
+    top: 580px;
+    left: 125px;
+}
+
+.youtube {
+    top: 540px;
+    left: 200px;
+    background-position-x: 141px;
+    background-position-y: 203px;
+}
+
+.fyoutube {
+    top: 580px;
+    left: 189px;
+}
+
+.facebook {
+    top: 540px;
+    left: 275px;
+    background-position-x: 66px;
+    background-position-y: 203px;
+}
+
+.ffacebook {
+    top: 580px;
+    left: 264px;
+}
+
+.pages {
+    height: 10px;
+    width: 44px;
+    top: 610px;
+    left: 153px;
+    background-position-x: center;
+    background-position-y: 790px;
+}
+
+.phone {
+    top: 635px;
+    left: 40px;
+    background-position-x: 300px;
+    background-position-y: 90px;
+}
+
+.chorme {
+    top: 635px;
+    left: 100px;
+    background-position-x: 241px;
+    background-position-y: 90px;
+}
+
+.message {
+    top: 635px;
+    left: 160px;
+    background-position-x: 180px;
+    background-position-y: 90px;
+}
+
+.camera {
+    top: 635px;
+    left: 220px;
+    background-position-x: 120px;
+    background-position-y: 90px;
+}
+
+.gift {
+    top: 635px;
+    left: 280px;
+    background-position-x: 60px;
+    background-position-y: 90px;
+}
+
+.menu {
+    top: 672px;
+    left: 90px;
+    background-position-x: 263px;
+    background-position-y: 36px;
+}
+
+.home {
+    top: 672px;
+    left: 159px;
+    background-position-x: 178px;
+    background-position-y: 36px;
+}
+
+.previous {
+    top: 672px;
+    left: 228px;
+    background-position-x: 93px;
+    background-position-y: 36px;
+}
