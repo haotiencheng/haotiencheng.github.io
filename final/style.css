@@ -1,0 +1,139 @@
+body {
+    margin: auto 0;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+
+hr {
+    width: 15%;
+    border: 2px solid;
+    color: black
+}
+
+.navbar {
+    background-color: #F5EC41;
+}
+
+h1 {
+    font-size: 1.7rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    gap: 0;
+    row-gap: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+
+.chart {
+    text-align: center;
+    justify-content: center;
+    grid-row: 1 / span 8;
+    grid-column: 2;
+}
+
+#Header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#createBtn {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.spinner-border {
+    text-align: center;
+    justify-content: center;
+}
+
+#remaining-calls {
+    text-align: center;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    html {
+        /* default is 1rem or 16px */
+        font-size: 12px;
+    }
+}
+
+.remove-btn {
+    margin-left: 20px;
+}
+
+#clear-btn {
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+#select-btn {
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+@media (max-width: 600px) {
+    html {
+        /* default is 1rem or 16px */
+        font-size: 6px;
+    }
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.how-to {
+    margin-top: 30px;
+    /* margin-bottom: 30px; */
+}
+
+.information {
+    text-align: center;
+    justify-content: center;
+}
+
+.fa-3x {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: black
+}
+
+.email {
+    color: black;
+    margin-bottom: 30px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+    height: 5%;
+    background-color: #F5EC41;
+}
+
+#Contact {
+    margin-bottom: 20px;
+}
+
+#Back {
+    color: black;
+}
+
+.design {
+    text-align: end;
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Stock CC</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="Navbar">
+        <a class="navbar-brand">Stock Chart Creator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#Header">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#HowToUse">How to Use</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Contact">Contact Me</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                Created by Hao-Tien Cheng
+            </span>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container" id="Header">
+        <div class="row">
+            <div class="input-group mb-3 col-12">
+                <input type="text" class="form-control" placeholder="Enter Your API Key" aria-label="API Key" aria-describedby="button-addon2" id="api-key">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="button" id="api-btn">Submit</button>
+                </div>
+            </div>
+            <div id="ETFHeader" class="col-6">
+                <h1>Stock Symbol Select</h1>
+            </div>
+            <div class="col-6">
+                <h1>Chart</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container" id="Content">
+        <div class="grid-container" id="tickerList">
+            <div class="input-group custom-checkbox">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" id="checkbox_1">
+                    </div>
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with checkbox" value="AAPL" id="ticker_1">
+                <button type=" button" class="btn btn-outline-primary remove-btn" id="remove_btn_1">－</button>
+            </div>
+            <div class="chart" id="canvas" style="height: 400px; min-width: 110px">
+            </div>
+            <div class="input-group custom-checkbox">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" id="checkbox_2">
+                    </div>
+                </div>
+                <input type=" text" class="form-control" aria-label="Text input with checkbox" value="TSLA" id="ticker_2">
+                <button type=" button" class="btn btn-outline-primary remove-btn" id="remove_btn_2">－</button>
+            </div>
+            <div class="input-group custom-checkbox">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" id="checkbox_3">
+                    </div>
+                </div>
+                <input type=" text" class="form-control" aria-label="Text input with checkbox" value="NDAQ" id="ticker_3">
+                <button type=" button" class="btn btn-outline-primary remove-btn" id="remove_btn_3">－</button>
+            </div>
+        </div>
+        <input type="checkbox" id="checkAll" class="mx-3"> Check All
+        <div class="grid-container" id="buttonList">
+            <button type="button" class="btn btn-outline-primary" id="addButton">+ Add New Stock</button>
+            <div></div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary range-btn" id="5y">5y</button>
+                <button type="button" class="btn btn-primary range-btn" id="2y">2y</button>
+                <button type="button" class="btn btn-primary range-btn" id="1y">1y</button>
+                <button type="button" class="btn btn-primary range-btn" id="6mo">6mo</button>
+                <button type="button" class="btn btn-primary range-btn" id="3mo">3mo</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="button" class="btn btn-outline-primary col-1" id="clear-btn">Clear</button>
+            <div class="col-4"></div>
+            <div class="col-5">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+
+            <button type="button" class="btn btn-primary col-2 has-spinner createBtn" id="createBtn">
+                Create Chart</button>
+        </div>
+        <div id="remaining-calls"></div>
+    </div>
+
+
+    <!-- How To Use -->
+    <div class="container justify-content-center align-content-center" id="HowToUse">
+        <h1 class="how-to">How To Use</h1>
+        <hr>
+        <div class="row">
+            <div class="col-lg-6 how-to">
+                <p>1. Claim your own API on
+                    <a href="https://rapidapi.com/apidojo/api/yahoo-finance1">RapidAPI</a> <br>/ Use my API Key (As default, only allows 5 calls/sec 500 calls/month).
+                    <br>* You can see remaing calls under the "Create Chart" button after clicking it.
+                    <br>* Only US stocks are supported and each stock equals one call.
+                </p>
+            </div>
+            <div class="col-lg-6 how-to">
+                <img src="1.png">
+            </div>
+            <div class="col-lg-6 how-to">
+                <p>
+                    2. Search for your target stock's symbol on<br>
+                    <a href="https://finance.yahoo.com">Yahoo Finance.</a>
+                </p>
+            </div>
+            <div class="col-lg-6 how-to">
+                <img src="2.png">
+            </div>
+            <div class="col-lg-6 how-to">
+                <p>
+                    3. Type the symbol into the input box and check it.<br>
+                </p>
+            </div>
+            <div class="col-lg-6 how-to">
+                <img src="3.png">
+            </div>
+            <div class="col-lg-6 how-to">
+                <p>
+                    4. Select one of the range you want (Affect the data fetched), default 5 years.<br>
+                </p>
+            </div>
+            <div class="col-lg-6 how-to">
+                <img src="4.png">
+            </div>
+            <div class="col-lg-6 how-to">
+                <p>
+                    5. Press the "Create Chart" button to create chart.<br>
+                </p>
+            </div>
+            <div class="col-lg-6 how-to">
+                <img src="5.png">
+            </div>
+            <div class="col-lg-6 how-to">
+                <p>
+                    6. You can now play with the chart.<br>
+                </p>
+            </div>
+            <div class="col-lg-6 how-to">
+                <img src="6.png">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Contact -->
+    <div class="container bg-white w-50 h-auto" id="Contact">
+        <h1 class="information">Contact Me</h1>
+        <hr>
+        <div class="information">
+            <a class="fab fa-facebook-square fa-3x text-center justify-content-center mx-3" href="https://www.facebook.com/profile.php?id=100001019268579"></a>
+            <a class="fab fa-instagram-square fa-3x text-center justify-content-center mx-3" href="https://www.instagram.com/really_nice_day/"></a>
+            <a class="fab fa-github-square fa-3x text-center justify-content-center mx-3" href="https://github.com/haotiencheng"></a>
+            <a class="fab fa-medium fa-3x text-center justify-content-center mx-3" href="https://github.com/haotiencheng"></a>
+            <br>
+            <a class="far fa-envelope fa-3x"></a><a class="h3 email">：haotiencheng1217@gmail.com</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a class="navbar-brand" href="#Navbar" id="Back">Back to top</a>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://kit.fontawesome.com/7834dec193.js" crossorigin="anonymous"></script>
+    <script src="highstock.js"></script>
+    <script src="modules/data.js"></script>
+    <script src="modules/exporting.js"></script>
+    <script src="modules/export-data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
