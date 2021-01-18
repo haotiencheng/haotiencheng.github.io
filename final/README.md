@@ -5,16 +5,17 @@
 1. Claim your own API on RapidAPI / Use my API Key (As default, only allows 5 calls/sec 500 calls/month).
 * You can see remaing calls under the "Create Chart" button after clicking it.
 * Only US stocks are supported and each stock equals one call.
-
+![image](https://github.com/haotiencheng/haotiencheng.github.io/blob/master/final/1.png)
 2. Search for your target stock's symbol on Yahoo Finance.
-
+![image](https://github.com/haotiencheng/haotiencheng.github.io/blob/master/final/2.png)
 3. Type the symbol into the input box and check it.
-
+![image](https://github.com/haotiencheng/haotiencheng.github.io/blob/master/final/3.png)
 4. Select one of the range you want (Affect the data fetched), default 5 years.
-
+![image](https://github.com/haotiencheng/haotiencheng.github.io/blob/master/final/4.png)
 5. Press the "Create Chart" button to create chart.
-
+![image](https://github.com/haotiencheng/haotiencheng.github.io/blob/master/final/5.png)
 6. You can now play with the chart.
+![image](https://github.com/haotiencheng/haotiencheng.github.io/blob/master/final/6.png)
 
 做了什麼，使用了什麼技術：
 1. 排版使用Bootstrap，因為本身美感的要求所以layout是完全自己做的。
