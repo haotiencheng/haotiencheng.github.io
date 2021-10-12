@@ -20,7 +20,7 @@ const settings = {
     "method": "GET",
     "headers": {
         "x-rapidapi-key": "e20fec8ccbmshabd9e19876ee1ffp11f459jsn95920f4d367e",
-        "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+        "x-rapidapi-host": "yh-finance.p.rapidapi.com"
     }
 };
 
@@ -149,7 +149,7 @@ $(() => {
         let seriesCounter = 0;
 
         tickerList.forEach((ticker, i) => {
-            settings.url = "https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-chart?" + "interval=1d&" + "symbol=" + ticker + "&" + "range=" + range + "&region=US";
+            settings.url = "https://yh-finance.p.rapidapi.com/stock/v2/get-chart?" + "interval=1d&" + "symbol=" + ticker + "&" + "range=" + range + "&region=US";
             $.ajax(settings).done(function(response, status, xhr) {
                 let originalData = response;
                 let remainingCalls = xhr.getResponseHeader("x-ratelimit-requests-remaining");
