@@ -7,63 +7,71 @@ let seriesOptions = [];
 let seriesCounter = 0;
 
 function arrayRemove(arr, value) {
-
-    return arr.filter(function(ele) {
+    return arr.filter(function (ele) {
         return ele != value;
     });
 }
 
 const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "",
-    "method": "GET",
-    "headers": {
+    async: true,
+    crossDomain: true,
+    url: "",
+    method: "GET",
+    headers: {
         "x-rapidapi-key": "e20fec8ccbmshabd9e19876ee1ffp11f459jsn95920f4d367e",
-        "x-rapidapi-host": "yh-finance.p.rapidapi.com"
-    }
+        "x-rapidapi-host": "yh-finance.p.rapidapi.com",
+    },
 };
 
 const createChart = (seriesOptions) => {
     // console.log(seriesOptions);
 
-    Highcharts.stockChart('canvas', {
-
+    Highcharts.stockChart("canvas", {
         rangeSelector: {
-            selected: 4
+            selected: 4,
         },
 
         yAxis: {
             labels: {
-                formatter: function() {
-                    return (this.value > 0 ? ' + ' : '') + this.value + '%';
-                }
+                formatter: function () {
+                    return (this.value > 0 ? " + " : "") + this.value + "%";
+                },
             },
-            plotLines: [{
-                value: 0,
-                width: 2,
-                color: 'silver'
-            }]
+            plotLines: [
+                {
+                    value: 0,
+                    width: 2,
+                    color: "silver",
+                },
+            ],
         },
 
         plotOptions: {
             series: {
-                compare: 'percent',
-                showInNavigator: true
-            }
+                compare: "percent",
+                showInNavigator: true,
+            },
+        },
+        exporting: {
+            buttons: {
+                contextButton: {
+                    enabled: false,
+                },
+            },
         },
 
         tooltip: {
-            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+            pointFormat:
+                '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
             valueDecimals: 2,
-            split: true
+            split: true,
         },
 
         global: {
-            useUTC: false
+            useUTC: false,
         },
 
-        series: seriesOptions
+        series: seriesOptions,
     });
 };
 
@@ -75,25 +83,26 @@ const parseData = (timeStamp, adjClose) => {
     return DataList;
 };
 
-
-
 $(() => {
     $("#Content").on("click", "#addButton", () => {
         if (etfNumbers < 5) {
-            let tickerSelector = $(`<div class="input-group custom-checkbox">` +
-                `<div class="input-group-prepend">` +
-                `<div class="input-group-text">` +
-                `<input type="checkbox" aria-label="Checkbox for following text input" id="checkbox_${tickerID}">` +
-                `</div>` +
-                `</div>` +
-                `<input type="text" class="form-control" aria-label="Text input with checkbox" value="" id="ticker_${tickerID}">` +
-                `</div>`
+            let tickerSelector = $(
+                `<div class="input-group custom-checkbox">` +
+                    `<div class="input-group-prepend">` +
+                    `<div class="input-group-text">` +
+                    `<input type="checkbox" aria-label="Checkbox for following text input" id="checkbox_${tickerID}">` +
+                    `</div>` +
+                    `</div>` +
+                    `<input type="text" class="form-control" aria-label="Text input with checkbox" value="" id="ticker_${tickerID}">` +
+                    `</div>`
             );
-            let removeBtn = $(`<button type="button" class="btn btn-outline-primary remove-btn" id="remove_btn_${removeBtnID}">－</button>`)
+            let removeBtn = $(
+                `<button type="button" class="btn btn-outline-primary remove-btn" id="remove_btn_${removeBtnID}">－</button>`
+            );
             $("#tickerList").append(tickerSelector);
             etfNumbers++;
             $(tickerSelector).append(removeBtn);
-            removeTickerID = "#" + "remove_btn_" + String(removeBtnID)
+            removeTickerID = "#" + "remove_btn_" + String(removeBtnID);
             tickerIDList.push(tickerID);
             removeBtnID++;
             tickerID++;
@@ -103,7 +112,7 @@ $(() => {
         }
     });
 
-    $("#Content").on("click", ".remove-btn", event => {
+    $("#Content").on("click", ".remove-btn", (event) => {
         let removeTickerID = "#" + event.target.id;
         $(removeTickerID).parent().remove();
         tickerIDList = arrayRemove(tickerIDList, event.target.id.substring(11));
@@ -111,13 +120,12 @@ $(() => {
     });
 
     $("#clear-btn").click(() => {
-        $(".form-control").val("")
+        $(".form-control").val("");
         $("input:checkbox").prop("checked", false);
     });
 
-    $("#checkAll").click(function() {
-        $('input:checkbox').not(this).prop('checked', this.checked);
-
+    $("#checkAll").click(function () {
+        $("input:checkbox").not(this).prop("checked", this.checked);
     });
 
     $("#api-btn").click(() => {
@@ -126,17 +134,19 @@ $(() => {
         // console.log(`Your API Key = ${apiKey}`)
     });
 
-    $("#buttonList").on("click", ".range-btn", event => {
+    $("#buttonList").on("click", ".range-btn", (event) => {
         range = $("#" + event.target.id).text();
         // console.log(range);
-    })
+    });
 
     $(".createBtn").on("click", () => {
-        let tickerList = []
+        let tickerList = [];
         $(".createBtn").empty();
-        $(".createBtn").prepend(`<span class="spinner-border spinner-border-sm m-1 "></span>`);
+        $(".createBtn").prepend(
+            `<span class="spinner-border spinner-border-sm m-1 "></span>`
+        );
         $(".createBtn").append("Loading...");
-        tickerIDList.forEach(id => {
+        tickerIDList.forEach((id) => {
             check = "#checkbox_" + id;
             if ($(check).is(":checked")) {
                 tic = "#ticker_" + id;
@@ -144,22 +154,34 @@ $(() => {
                 tickerList.push(ticker.val());
             }
             // console.log(tickerList);
-        })
+        });
         let seriesOptions = [];
         let seriesCounter = 0;
 
         tickerList.forEach((ticker, i) => {
-            settings.url = "https://yh-finance.p.rapidapi.com/stock/v2/get-chart?" + "interval=1d&" + "symbol=" + ticker + "&" + "range=" + range + "&region=US";
-            $.ajax(settings).done(function(response, status, xhr) {
+            settings.url =
+                "https://yh-finance.p.rapidapi.com/stock/v2/get-chart?" +
+                "interval=1d&" +
+                "symbol=" +
+                ticker +
+                "&" +
+                "range=" +
+                range +
+                "&region=US";
+            $.ajax(settings).done(function (response, status, xhr) {
                 let originalData = response;
-                let remainingCalls = xhr.getResponseHeader("x-ratelimit-requests-remaining");
-                let adjClose = originalData.chart.result[0].indicators.adjclose[0].adjclose;
+                let remainingCalls = xhr.getResponseHeader(
+                    "x-ratelimit-requests-remaining"
+                );
+                let adjClose =
+                    originalData.chart.result[0].indicators.adjclose[0]
+                        .adjclose;
                 let timeStamp = originalData.chart.result[0].timestamp;
                 let pdata = parseData(timeStamp, adjClose);
                 // console.log(data);
                 seriesOptions[i] = {
                     name: ticker,
-                    data: pdata
+                    data: pdata,
                 };
                 seriesCounter++;
                 // console.log(ticker + ", Finish", tickerList.length)
@@ -167,19 +189,22 @@ $(() => {
                     // console.log(seriesOptions)
                     // console.log("create");
                     createChart(seriesOptions);
-                    $(".createBtn").empty()
+                    $(".createBtn").empty();
                     $(".spinner-border").remove();
                     $(".createBtn").removeClass("has-spinner");
-                    $(".createBtn").append("Create Chart")
-                    $('html, body').animate({
-                        scrollTop: $("#Header").offset().top
-                    }, 1000);
+                    $(".createBtn").append("Create Chart");
+                    $("html, body").animate(
+                        {
+                            scrollTop: $("#Header").offset().top,
+                        },
+                        1000
+                    );
                     $("#remaining-calls").empty();
-                    $("#remaining-calls").append("Remaining calls = " + remainingCalls);
+                    $("#remaining-calls").append(
+                        "Remaining calls = " + remainingCalls
+                    );
                 }
             });
         });
-
-
     });
 });
